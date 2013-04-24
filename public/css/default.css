@@ -1,0 +1,16 @@
+/* Override some defaults */
+html,body {
+	background-color:#eee
+}
+
+body {
+	padding-top:40px
+}
+
+.actions {
+	float: right;
+}
+
+#article-content {
+	width: 100%;
+}

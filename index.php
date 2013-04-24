@@ -2,6 +2,18 @@
 
 /*
  *---------------------------------------------------------------
+ * DEFAULT CONTENT-TYPE HEADER
+ *---------------------------------------------------------------
+ *
+ * Set a default content type (can override when need be)
+ *
+ */
+	header('Content-Type: text/html; charset=utf-8');
+
+
+
+/*
+ *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
  *
@@ -12,7 +24,7 @@
  * This can be set to anything, but default usage is:
  *
  *     development
- *     testing
+ *     staging
  *     production
  *
  * NOTE: If you change these, also change the error_reporting() code below
@@ -25,7 +37,7 @@
  *---------------------------------------------------------------
  *
  * Different environments will require different levels of error reporting.
- * By default development will show errors but testing and live will hide them.
+ * By default development will show errors but staging and live will hide them.
  */
 
 if (defined('ENVIRONMENT'))
@@ -34,11 +46,13 @@ if (defined('ENVIRONMENT'))
 	{
 		case 'development':
 			error_reporting(E_ALL);
+			ini_set('display_errors', TRUE);
 		break;
-	
-		case 'testing':
+
+		case 'staging':
 		case 'production':
 			error_reporting(0);
+			ini_set('display_errors', FALSE);
 		break;
 
 		default:
