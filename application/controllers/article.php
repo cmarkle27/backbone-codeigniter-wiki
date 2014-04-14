@@ -11,8 +11,7 @@ class Article extends CI_Controller {
 
 	public function index()
 	{
-		$list = $this->article_model->get_list();
-		// var_dump($list);
-		$this->load->view('default');
+		$articles = $this->article_model->get_list();
+		$this->load->view('default', array('articles' => $articles));
 	}
 }

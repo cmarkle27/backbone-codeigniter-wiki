@@ -8,7 +8,7 @@ if ( ! function_exists('script'))
 	function script($uri)
 	{
 		$CI =& get_instance();
-		echo "<script src=\"{$CI->config->base_url($uri)}\">";
+		echo "<script src=\"{$CI->config->base_url($uri)}\"></script>\n";
 	}
 }
 
@@ -17,7 +17,7 @@ if ( ! function_exists('css'))
 	function css($uri)
 	{
 		$CI =& get_instance();
-		echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$CI->config->base_url($uri)}\">";
+		echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$CI->config->base_url($uri)}\">\n";
 	}
 }
 
